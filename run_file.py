@@ -8,5 +8,4 @@ while not exit_code:
     if postcode.lower() == 'exit' or postcode.lower() == 'thank you, i am done for today':
         exit_code = True
     else:
-        url = generate_URL(path, postcode)
-        print(get_response(url))
+        print(get_response(generate_URL(path, postcode)))
