@@ -18,7 +18,7 @@ import requests
 # Then I need to use the package requests to make the request
 # I will receive a JSON that I need to parse into a dictionary
 path = 'http://api.postcodes.io/postcodes/'
-args = '<postcode>>'
+args = 'bn246ay'
 
 # build URL
 url_target = path + args
@@ -27,7 +27,6 @@ print(url_target)
 # time to request
 
 response = requests.get(url_target)
-
 print(response)
 print(type(response))
 
@@ -38,8 +37,8 @@ print(type(response_dictionary))
 #
 # for key in response_dictionary.keys():
 #     print(key)
-
 result_dictionary = response_dictionary['result']
-
 for key in result_dictionary:
     print(key, ' IS ', result_dictionary[key])
+
+print(result_dictionary['longitude'])
